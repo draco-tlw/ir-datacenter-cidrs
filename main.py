@@ -6,25 +6,38 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 TARGET_ASNS = [
-    "43754",  # Afranet
-    "25184",  # Afranet (Secondary/Older IPs)
-    "43288",  # ArvanCloud
-    "43275",  # Asiatech
-    "42306",  # Respina
-    "31549",  # Shatel
-    "16322",  # ParsOnline
-    "58224",  # MihanWebHost
-    
-    "200406", # Javid Berbid Mamasani (JeyServer)
-    "211881", # Tahlil Dadeh Novin Fadak
-    "60976",  # Parsan Lin Co
-    "59441",  # Hostiran Network
-    
-    "51493",  # Sabanet (Neda Gostar)
-    "41689",  # Soroush Resaneh
-    "49100",  # MobinNet (Often used for cloud/B2B)
-    "39508",  # Irancell (Datacenter/Cloud divisions)
-    "48359",  # Mabna Telecom
+TARGET_ASNS = [
+    "12880",   # TIC (Telecommunication Infrastructure Company)
+    "48159",   # TIC (Secondary)
+    "58224",   # TCI
+    "197207",  # MCI
+    "39508",   # Irancell
+    "203693",  # Rightel
+    "49100",   # MobinNet
+    # ---
+    "43288",   # ArvanCloud
+    "43754",   # Afranet
+    "25184",   # Afranet
+    "57218",   # Fanap
+    "51724",   # GreenWeb 
+    "49826",   # ParsPack
+    "42544",   # Bayan
+    "59441",   # Hostiran 
+    "200406",  # Javid Berbid Mamasani 
+    "211881",  # Tahlil Dadeh Novin Fadak
+    "60976",   # Parsan Lin Co
+    # ---
+    "31549",   # Shatel
+    "43275",   # Asiatech
+    "16322",   # ParsOnline
+    "42306",   # Respina
+    "51493",   # Sabanet
+    "41689",   # Soroush Resaneh
+    "48359",   # Mabna Telecom
+    "25124",   # Datak
+    "43398",   # Shahrad
+    "43087",   # Andisheh Sabz Khazar
+]
 ]
 
 async def fetch_cidr(session, asn, retries=3):
