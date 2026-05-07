@@ -6,7 +6,6 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 TARGET_ASNS = [
-TARGET_ASNS = [
     "12880",   # TIC (Telecommunication Infrastructure Company)
     "48159",   # TIC (Secondary)
     "58224",   # TCI
@@ -37,7 +36,6 @@ TARGET_ASNS = [
     "25124",   # Datak
     "43398",   # Shahrad
     "43087",   # Andisheh Sabz Khazar
-]
 ]
 
 async def fetch_cidr(session, asn, retries=3):
