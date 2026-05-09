@@ -33,15 +33,11 @@ jobs:
           path: target_cidrs_optimized.txt
           retention-days: 7
 
-      - name: Set current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
       - name: Upload to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
           filename: target_cidrs_optimized.txt
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
-          name: "target_cidrs_${{ steps.date.outputs.date }}.txt"
-          overwrite: "false"
+          name: "target_cidrs.txt"
+          overwrite: "true"
