@@ -37,9 +37,11 @@ jobs:
         uses: AnimMouse/setup-rclone@v1
 
       - name: Create Rclone Config
+        env:
+          RCLONE_CONF_DATA: ${{ secrets.RCLONE_CONF }}
         run: |
           mkdir -p ~/.config/rclone
-          echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
+          echo "$RCLONE_CONF_DATA" > ~/.config/rclone/rclone.conf
           
       - name: Set current date
         id: date
