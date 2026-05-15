@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Optimized-CIDRs
-          path: iran_dynamic_cidrs.txt
+          path: iran_datacenter_cidrs.txt
           retention-days: 7
 
       - name: Setup Rclone
@@ -49,4 +49,4 @@ jobs:
 
       - name: Upload to Google Drive
         run: |
-          rclone copyto iran_dynamic_cidrs.txt gdrive:ir-datacenter-cidrs/iran_dynamic_cidrs_${{ steps.date.outputs.date }}.txt
+          rclone copyto iran_datacenter_cidrs.txt gdrive:ir-datacenter-cidrs/iran_datacenter_cidrs_${{ steps.date.outputs.date }}.txt
