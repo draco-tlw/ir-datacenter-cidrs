@@ -7,7 +7,7 @@ import sys
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 async def get_iran_asns(session):
-    url = "https://stat.ripe.net/data/country-asns/data.json?resource=IR"
+    url = "https://stat.ripe.net/data/country-asns/data.json?resource=IR&lod=1"
     logging.info("[*] Fetching dynamic ASN list for Iran (IR)...")
     
     try:
